@@ -64,10 +64,16 @@ class GoogleTranslator {
 
    if (!this.hasNativeTranslator || !this.hasNativeDetector) {
     console.warn("APIs nativas de traducción y detección de idioma NO soportadas en tu navegador.")
-    // this.showWarning()
+    this.showAPIWarning()
    } else {
     console.log('✅ APIs nativas de IA disponibles')
    }
+  }
+
+  // Mostrar aviso de que las APIs nativas no están disponibles
+  showAPIWarning() {
+    const warning = $("#apiWarning")
+    warning.style.display = "block"
   }
 
   setupEventListeners () {
