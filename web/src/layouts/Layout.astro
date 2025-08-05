@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions"
+import { ClientRouter } from "astro:transitions"
 
 interface Props {
   title: string
@@ -33,11 +33,13 @@ const description =
     <link rel="canonical" href="https://javascript100.dev" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <slot />
     <style is:global>
+      @import "tailwindcss";
+
       html {
         font-family: system-ui, sans-serif;
       }
