@@ -1,0 +1,218 @@
+:root {
+  /* Google Brand Colors */
+  --google-blue: #4285f4;
+  --google-red: #ea4335;
+  --google-yellow: #fbbc05;
+  --google-green: #34a853;
+
+  /* Text Colors */
+  --text-primary: #3c4043;
+  --text-secondary: #5f6368;
+  --text-tertiary: #9aa0a6;
+
+  /* Background Colors */
+  --bg-primary: white;
+  --bg-secondary: #f8f9fa;
+  --bg-hover: #f1f3f4;
+
+  /* Border Colors */
+  --border-primary: #e8eaed;
+  --border-secondary: #dadce0;
+
+  /* State Colors */
+  --color-focus: #1a73e8;
+  --color-success: var(--google-green);
+  --color-warning: var(--google-yellow);
+  --color-error: var(--google-red);
+
+  /* Warning Colors */
+  --warning-bg: #fff3cd;
+  --warning-text: #856404;
+  --warning-border: #ffeaa7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Google Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+/* Header */
+
+.header {
+  border-bottom: 1px solid var(--border-primary);
+  padding: 16px 24px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.google-g {
+  color: var(--google-blue);
+}
+
+.google-o1 {
+  color: var(--google-red);
+}
+
+.google-o2 {
+  color: var(--google-yellow);
+}
+
+.google-l {
+  color: var(--google-green);
+}
+
+.google-e {
+  color: var(--google-red);
+}
+
+.traductor {
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+/* Language Selection */
+.icon-button {
+  display: flex;
+  align-items: center;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  border-radius: 50%;
+  transition: background-color .2s, transform .2s;
+  padding: 6px;
+
+  &:hover {
+    background: var(--bg-hover);
+  }
+
+  &:active {
+    scale: .9;
+  }
+}
+
+.language-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 16px;
+}
+
+.source-language,
+.target-language {
+  flex: 1;
+  max-width: 200px;
+}
+
+select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-secondary);
+  font-size: 14px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color .2s;
+
+  &:hover {
+    border-color: var(--text-secondary);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--google-blue);
+    box-shadow: 0 0 0 2px var(--google-blue);
+  }
+}
+
+/* Input and Output translations */
+.translation-area {
+  display: flex;
+  height: 250px;
+  border-top: 1px solid var(--border-primary);
+}
+
+.input-section,
+.output-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-section {
+  border-right: 1px solid var(--border-primary);
+}
+
+.textarea-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#inputText {
+  flex: 1;
+  border: 0;
+  padding: 24px;
+  font: inherit;
+  resize: none;
+  outline: none;
+  font-size: 18px;
+  &::placeholder {
+    color: var(--text-secondary);
+  }
+}
+
+#outputText {
+  flex: 1;
+  padding: 24px;
+  font-size: 18px;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  overflow-y: auto;
+
+  &:empty::before {
+    content: "Traducción";
+    color: var(--text-secondary);
+  }
+}
+
+.input-controls,
+.output-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-block: 1px solid var(--border-primary);
+}
+
+.output-controls {
+  background-color: var(--bg-secondary);
+}
