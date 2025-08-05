@@ -167,4 +167,17 @@ export const PROJECTS = [
     },
     youtube: 'https://www.youtube.com/watch?v=8EA-WNFMYwI'
   },
+  {
+    slug: "13-google-translate",
+    title: "Google Translate",
+    description: "Crea tu propio traductor de Google con HTML, CSS y JavaScript",
+    learnings: [
+      "IA local",
+      "Reconocimiento de voz",
+      "SpeechSynthesis"
+    ],
+    theme: {
+      isDark: false
+    },
+  }
 ]
